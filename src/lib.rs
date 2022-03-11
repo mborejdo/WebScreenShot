@@ -40,7 +40,7 @@ pub fn screenshot_tab(
     -> Result<Vec<u8>, failure::Error>
 {
     let options = LaunchOptionsBuilder::default()
-                    .sandbox(false)
+                    .sandbox(false) // needed for docker
                     .build()
                     .unwrap();
     let browser = Browser::new(options)?;
