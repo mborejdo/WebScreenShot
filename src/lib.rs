@@ -60,7 +60,7 @@ pub fn screenshot_tab(
         tab.wait_for_element(element)?;
     }
 
-    let kmillis = time::Duration::from_millis(1000);
+    let kmillis = time::Duration::from_millis(3000);
     thread::sleep(kmillis);
 
     // Take screenshot in given format, return image bytes.
