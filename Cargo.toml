@@ -1,0 +1,38 @@
+# Refs:
+# - https://doc.rust-lang.org/cargo/reference/manifest.html
+# - https://doc.rust-lang.org/cargo/guide/project-layout.html
+# - https://doc.rust-lang.org/cargo/reference/cargo-targets.html
+
+[package]
+name = "webscreenshot"
+version = "0.2.4"
+authors = ["🎷🐛 Lee Ball <lee.cat.ball@gmail.com>", "Michael Borejdo <mborejdo@gmail.com>"]
+edition = "2021"
+description = "A simple CLI tool to take screenshots of rendered webpages, given a URL or local file path."
+homepage = "https://github.com/catleeball/WebScreenShot"
+repository = "https://github.com/catleeball/WebScreenShot"
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["screenshot", "screencap", "capture", "chrome", "web"]
+categories = ["command-line-utilities", "visualization", "development-tools::testing", "web-programming", "development-tools"]
+
+[badges]
+maintenance = { status = "experimental" }
+
+[features]
+default = ["clap"]
+
+[lib]
+name = "webscreenshotlib"
+
+[[bin]]
+name = "wss"
+required-features = ["default"]
+
+[dependencies]
+failure = "^0.1.8"
+headless_chrome = "^0.9.0"
+clap = { version = "^2.33.1", optional = true }
+
+[dev-dependencies]
+more-asserts = "^0.2.1"
